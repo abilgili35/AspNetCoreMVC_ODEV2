@@ -1,0 +1,33 @@
+﻿@model AspNetCoreMVC_ODEV2.Models.Patient
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Patient/Detail</h1>
+<br />
+<div class="container px-4 px-lg-5 my-5">
+    <div class="row gx-4 gx-lg-5 align-items-center">
+        <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
+        <div class="col-md-6">
+            <div class="small mb-1">SKU: BST-498</div>
+            <h1 class="display-5 fw-bolder">@Model.FirstName @Model.LastName</h1>
+            <div class="fs-5 mb-5">
+                <span>@Model.IdentityNumber</span>
+            </div>
+            <p class="lead"> 
+                @if(Model.PatientInfo != null)
+                {
+                    <h4>Boy : @Model.PatientInfo.Height</h4>
+                    <h4>Kilo : @Model.PatientInfo.Weight</h4>
+                }
+                else
+                {
+                    <h4>Kayitli hasta bilgisi bulunamadi!</h4>
+                }
+
+            </p>
+        </div>
+    </div>
+</div>
+
